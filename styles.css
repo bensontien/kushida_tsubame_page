@@ -1,0 +1,221 @@
+/* 全局樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #fff;
+    background: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe') no-repeat center center fixed;
+    background-size: cover;
+    line-height: 1.6;
+}
+
+/* 導航欄自定義 */
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #d8b4fe !important;
+}
+
+/* 首頁區塊調整 */
+#home {
+    padding-top: 80px; /* 增加頂部內邊距，避免被導航欄遮擋 */
+}
+
+/* 區塊樣式 */
+.section {
+    padding: 40px 0; /* 減少內邊距，解決間距過大問題 */
+    min-height: auto; /* 移除100vh，讓高度自適應內容 */
+}
+
+/* 內容容器（替代原.content） */
+.section .container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* 頭像 */
+.avatar {
+    border-radius: 50%;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* 標題 */
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* 社群連結 */
+.social-icons .social-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-icons .social-link:hover {
+    background-color: #d8b4fe; /* 懸停時變為紫色 */
+    transform: scale(1.1); /* 放大效果 */
+}
+
+/* 作品集區塊 */
+#portfolio {
+    padding-top: 20px;
+}
+
+/* 輪播樣式 */
+.carousel {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto; /* 預設保留原始高度 */
+    object-fit: contain; /* 保持比例，顯示完整圖片 */
+    border-radius: 10px;
+    image-rendering: -webkit-optimize-contrast; /* 抗鋸齒 */
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: bicubic;
+}
+
+/* 控制按鈕和指示器樣式 */
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(1);
+}
+
+.carousel-indicators button {
+    background-color: #fff;
+    opacity: 0.5;
+}
+
+.carousel-indicators .active {
+    background-color: #d8b4fe;
+    opacity: 1;
+}
+
+/* 響應式調整 */
+@media (max-width: 767px) { /* 手機端 */
+    .carousel-item img {
+        max-height: 300px; /* 手機端限制最大高度 */
+        object-fit: cover; /* 手機端裁剪以適應 */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) { /* 平板端 */
+    .carousel-item img {
+        max-height: 350px; /* 平板端適中高度 */
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 992px) { /* 電腦端 (桌機) */
+    .carousel-item img {
+        max-height: 500px; /* 電腦端設置較高高度 */
+        object-fit: contain; /* 保持完整圖片 */
+    }
+}
+
+/* 贊助按鈕 */
+.sponsor-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.sponsor-btn:hover {
+    transform: scale(1.1);
+    text-decoration: none !important;
+}
+
+.sponsor-btn.fanbox {
+    background-color: #6b46c1;
+}
+
+.sponsor-btn.patreon {
+    background-color: #ff424d;
+}
+
+/* 聯繫 */
+section#contact a {
+    color: #d8b4fe;
+    text-decoration: none;
+}
+
+section#contact a:hover {
+    text-decoration: underline;
+}
+
+/* 燈箱 */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .section .container {
+        padding: 20px;
+    }
+
+    #home {
+        padding-top: 60px; /* 手機端減少頂部內邊距 */
+    }
+}
